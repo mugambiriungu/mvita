@@ -8,7 +8,8 @@ img.page-header {
   color: #fff;
   text-shadow: #000 0 0 0.2em;
 }
-/ body {
+
+body {
   font-family: helvetica, arial, sans-serif;
   margin: 3em;
 }
@@ -18,31 +19,86 @@ h1 {
   color: #373fff;
 }
 
-adrress {
-  color: #29627e;
+nav{
+  display:flex;
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+}
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #470206;
+  overflow: hidden;
+  align-items:center;
+  justify-content: space-evenly;
 }
 
 aside {
   width: 20%;
-  padding-left: 0.5rem;
-  margin-left: 0.5rem;
-  float: right;
-  box-shadow: inset 5px 0 5px -5px #29627e;
   font-style: italic;
+  float:left;
+  color: #29627e;
+  position:fixed;
+}
+
+section {
+  float: right;
+  width: 80%;
+}
+
+
+/* Styling the tables */
+table {
+      border-collapse: collapse;
+      border: 2px solid rgb(200,200,200);
+      letter-spacing: 1px;
+      font-size: 0.8rem;
+      background-color: #ff33cc;
+    }
+caption {
+      padding: 10px;
+    }
+     
+tbody {
+  font-size: 95%;
+}
+
+td, th {
+      border: 1px solid rgb(190,190,190);
+      padding: 10px 20px;
+    }
+  th {
+    background-color: rgb(235,235,235);}
+  
+    td {
+      text-align: center;
+    }
+
+/*deco of table strips*/
+tbody tr:nth-child(odd) {
+  background-color: #ff33cc;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e495e4;
+}
+
+/* adrress*/
+adrress {
   color: #29627e;
 }
 
-/* Add a black background color to the top navigation */
-.topnav {
-  background-color: #333;
-  overflow: hidden;
-}
+
 footer {
   background-color: #f2efed;
   display: flex;
   justify-content: center;
   padding: 5px;
+  clear:both; /* to prevent overwrapping due to floats*/
 }
+
+
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
@@ -71,3 +127,67 @@ footer {
   display: none;
 }
 
+.tablecommittee{
+  float:left;
+  width:50%;
+}
+.tablesubcommittee{
+  float:left;
+  width:45%;
+  margin-left:5%;
+  
+}
+
+.gallery{
+  display:flex;
+  flex-wrap:wrap;
+  padding: 0 4px;
+}
+
+/* creating four equal  columns for pics*/
+.img-grid{
+  flex: 25%;
+  max-width:25%;
+  padding:0 4px;
+}
+
+.img-grid img{
+  margin-top:8px;
+  vertical-align: middle;
+  width:100%;
+}
+/* responsive layout to make two columns instead of four*/
+@media screen and (max-width: 800px) {
+  .img-grid {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/*responsive layout to stack on top of each other*/
+@media screen and (max-width:600px){
+  .img-grid{
+    flex:100%;
+    max-width:100%;
+  }
+}
+
+.banner {
+  position: relative;
+  max-width: 800px; /* Maximum width */
+  margin: 0 auto; /* Center it */
+}
+
+.image-overlay {
+  position: absolute;
+  top: 60px;
+  left: 300px;
+  opacity: .4;
+}
+
+
+
+
+* {
+  box-sizing: border-box;
+}
